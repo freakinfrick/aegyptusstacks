@@ -67,7 +67,8 @@ CREATE TABLE texts(canonical_id TEXT PRIMARY KEY, name TEXT, script TEXT, period
   text_type TEXT, findspot TEXT, location TEXT, date_earliest INT, date_latest INT,
   source TEXT, room_key TEXT, sentence_count INT, nc INT) WITHOUT ROWID;
 CREATE TABLE sentences(id INTEGER PRIMARY KEY, canonical_id TEXT, seq INT, source TEXT,
-  translit TEXT, en TEXT, de TEXT, nc INT);
+  translit TEXT, en TEXT, de TEXT, nc INT,
+  en_ml TEXT);  -- en_ml: model that machine-made the English, NULL = from the source
 CREATE TABLE rooms(room_key TEXT PRIMARY KEY, q INT, r INT, z INT, json TEXT) WITHOUT ROWID;
 """
 
@@ -140,14 +141,17 @@ def build(out: Path) -> None:
     cur = pg.cursor(name="sentences")
     cur.itersize = 20000
     cur.execute("""select id, canonical_id, sequence_num, source, transliteration,
-        translation->>'en', translation->>'de' from sentences order by canonical_id,
+        translation->>'en', translation->>'de',
+        case when source_detail ? 'en_translation'
+             then coalesce(source_detail->'en_translation'->>'model', 'unknown') end
+        from sentences order by canonical_id,
         sequence_num nulls last, id""")
     n = skipped = 0
     while batch := cur.fetchmany(20000):
-        good = [(*r, SOURCES.get(r[3], ("", "", 0, ""))[2]) for r in batch
+        good = [(*r[:7], SOURCES.get(r[3], ("", "", 0, ""))[2], *r[7:]) for r in batch
                 if r[3] not in EXCLUDED and r[1] in kept]
         skipped += len(batch) - len(good)
-        db.executemany("insert into sentences values (?,?,?,?,?,?,?,?)", good)
+        db.executemany("insert into sentences values (?,?,?,?,?,?,?,?,?)", good)
         n += len(good)
     log(f"sentences kept {n}, left out {skipped}")
     unknown = db.execute("select distinct source from sentences").fetchall()
@@ -226,6 +230,23 @@ def licenses_md(db_path: Path) -> str:
         f"{nc_texts:,} texts hold RAMSES sentences. Every RAMSES sentence carries the non-commercial",
         "flag in the file and on the page. RAMSES arrives as its dataset splits (train/test/val),",
         "not as separate texts, so each split is one very long volume.",
+        "",
+        "## Machine-made English",
+        "",
+        "Most English here is a machine translation (`ml_draft`, needs review), made from the source's",
+        "German or from the transliteration. Each such sentence is marked on the page, with the model",
+        "named and the source's own German beside it where there is one. Machine English per source:",
+        "",
+    ]
+    for src, name, total, ml in db.execute("""select s.source, x.name, count(*),
+            sum(s.en_ml is not null) from sentences s join sources x using(source)
+            where s.en is not null and s.en <> '' group by 1 order by 3 desc"""):
+        lines.append(f"- {name}: {ml:,} of {total:,} English sentences machine-made.")
+    lines += ["", "By model:", ""]
+    for model, n in db.execute("""select en_ml, count(*) from sentences where en_ml is not null
+            group by 1 order by 2 desc"""):
+        lines.append(f"- `{model}`: {n:,}")
+    lines += [
         "",
         "## Left out",
         "",
