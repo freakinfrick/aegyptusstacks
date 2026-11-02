@@ -21,6 +21,8 @@ cargo run -p stacks-engine --release   # explore the labyrinth
 
 **Corpus database.** The database dump is not in this repo: several source corpora restrict redistribution (RAMSES is non-commercial; Nederhof's PhilologEg needs the author's permission). Build it from the upstream sources with [freakinfrick/aegyptusdb](https://github.com/freakinfrick/aegyptusdb) (`scripts/bootstrap.sh`, then the importers; about 3 hours), then save it as `data/corpus/aegyptus.sql.gz` with `pg_dump aegyptus | gzip`.
 
+**Search in your browser.** [aegyptuslab.cc/stacks/search](https://aegyptuslab.cc/stacks/search) searches every sentence of the public edition with no server: the corpus is one read-only SQLite file (FTS5) that the page reads piece by piece over HTTP range requests. `tools/export_web_db.py` builds it from Postgres and writes `DATA-LICENSES.md`; Nederhof's PhilologEg is left out and RAMSES is flagged non-commercial.
+
 The game runs standalone — walk hexagonal rooms, read ancient texts on shelves, browse articles. The Hermes Librarian (AI companion) and Kimi Scribe (article synthesis) are optional and require separate LLM backends. See `.env.example` for configuration.
 
 ---
@@ -199,7 +201,7 @@ The first-import-wins rule prevents duplicate canonical records. ORAEC imports f
 
 ### Scholarly Integrity
 
-Every text carries its provenance chain: `canonical_id`, source corpus array, external concordance IDs (TLA, Trismegistos, British Museum, DDbDP, Louvre, etc.), translation confidence level (`verified`, `unreviewed`, `ml_draft`), and original shelfmark. Nothing is paraphrased. Nothing is generated in the voice of ancient Egypt. The ancient Egyptians generated that text. We found it.
+Every text carries its provenance chain: `canonical_id`, source corpus array, external concordance IDs (TLA, Trismegistos, British Museum, DDbDP, Louvre, etc.), translation confidence level (`verified`, `unreviewed`, `ml_draft`), and original shelfmark. Most English in the corpus is a machine draft made from the German scholarship or the transliteration; every such sentence is tagged `ml_draft` and labelled as a machine translation wherever it is shown. Nothing is paraphrased. Nothing is generated in the voice of ancient Egypt. The ancient Egyptians generated that text. We found it.
 
 ---
 
