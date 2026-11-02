@@ -24,14 +24,15 @@ Source databases and their licenses:
     License:   CC BY-SA 4.0
     URL:       https://thesaurus-linguae-aegyptiae.de
 
-  ORAEC (Open Richly Annotated Cuneiform Corpus)
-    Provider:  Open source scholarly project
-    License:   CC BY-SA 3.0
-    URL:       https://oraec.github.io
+  ORAEC (Open Richly Annotated Corpus of Ancient Egyptian)
+    Provider:  Simon D. Schweitzer, Berlin-Brandenburgische Akademie der Wissenschaften
+    License:   CC BY-SA 4.0
+    URL:       https://github.com/oraec/corpus_raw_data
 
   AES (Ancient Egyptian Sentences)
-    Provider:  Open scholarly database
-    License:   Open access
+    Provider:  Simon D. Schweitzer, Berlin-Brandenburgische Akademie der Wissenschaften
+    License:   CC BY-SA 4.0
+    URL:       https://github.com/simondschweitzer/aes
 
   AED-TEI (Altaegyptisches Woerterbuch)
     Provider:  Berlin-Brandenburgische Akademie der Wissenschaften

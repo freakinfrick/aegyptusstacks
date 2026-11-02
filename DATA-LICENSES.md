@@ -26,20 +26,23 @@ Most English here is a machine translation (`ml_draft`, needs review), made from
 German or from the transliteration. Each such sentence is marked on the page, with the model
 named and the source's own German beside it where there is one. Machine English per source:
 
-- ORAEC (Simon D. Schweitzer, BBAW): 101,592 of 101,592 English sentences machine-made.
-- AED-TEI (Simon D. Schweitzer, BBAW): 98,242 of 98,242 English sentences machine-made.
-- Ramsès Late Egyptian Corpus (Université de Liège): 71,263 of 71,263 English sentences machine-made.
+- ORAEC (Simon D. Schweitzer, BBAW): 101,256 of 101,256 English sentences machine-made.
+- AED-TEI (Simon D. Schweitzer, BBAW): 97,805 of 97,805 English sentences machine-made.
+- Ramsès Late Egyptian Corpus (Université de Liège): 70,913 of 70,913 English sentences machine-made.
 - Coptic Scriptorium: 0 of 51,474 English sentences machine-made.
-- Thesaurus Linguae Aegyptiae (Hugging Face): 29,762 of 29,762 English sentences machine-made.
+- Thesaurus Linguae Aegyptiae (Hugging Face): 29,761 of 29,761 English sentences machine-made.
 - Aegyptus manual entries: 215 of 254 English sentences machine-made.
 
 By model:
 
-- `unknown`: 142,832
-- `claude-haiku-4-5-20251001`: 86,197
-- `gemini-3.1-flash-lite-preview`: 66,929
-- `gemma-4-26B-A4B-it-UD-Q4_K_M.gguf`: 4,901
+- `unknown`: 142,118
+- `claude-haiku-4-5-20251001`: 86,024
+- `gemini-3.1-flash-lite-preview`: 66,928
+- `gemma-4-26B-A4B-it-UD-Q4_K_M.gguf`: 4,665
 - `claude-opus-5-5`: 215
+
+1,124 machine "translations" that were really model notes (for example
+"[No translation available]") are dropped; those sentences show transliteration and German.
 
 ## Left out
 

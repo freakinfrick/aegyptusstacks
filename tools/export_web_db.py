@@ -8,7 +8,7 @@ browser sees exactly what `get_room` would return. Text comes from Postgres.
     python3 tools/export_web_db.py build  --out web/stacks.sqlite
     python3 tools/export_web_db.py licenses --db web/stacks.sqlite > DATA-LICENSES.md
     python3 tools/export_web_db.py check  --db web/stacks.sqlite --licenses DATA-LICENSES.md
-    python3 tools/export_web_db.py chunks --db web/stacks.sqlite --out web/data
+    python3 tools/export_web_db.py chunks --out ../aegyptuslab/stacks/data   # the site serves them
 
 Licence rules (see DATA-LICENSES.md, generated from the file itself):
   - Nederhof PhilologEg is left out (redistribution needs the author's permission).
@@ -23,6 +23,7 @@ import datetime as dt
 import html
 import json
 import os
+import re
 import sqlite3
 import sys
 import time
@@ -59,6 +60,13 @@ EXCLUDED = {
     "test": "test fixture",
     "test_suite": "test fixture",
 }
+
+# Model notes stored as if they were English ("[No translation available]",
+# "[TRANSLATION REQUIRED FOR ID 9525]", "Egyptian transliteration: ..." echoes). Only
+# machine English is tested; the sentence keeps its transliteration and German.
+ML_NOTE = re.compile(
+    r"^\[[^\[]*(transliteration|translation|text|provided|decipher|input|content)[^\[]*\]$"
+    r"|^Egyptian transliteration:", re.I)
 
 SCHEMA = """
 CREATE TABLE meta(key TEXT PRIMARY KEY, value TEXT) WITHOUT ROWID;
@@ -147,14 +155,21 @@ def build(out: Path) -> None:
              then coalesce(source_detail->'en_translation'->>'model', 'unknown') end
         from sentences order by canonical_id,
         sequence_num nulls last, id""")
-    n = skipped = 0
+    n = skipped = notes = 0
     while batch := cur.fetchmany(20000):
-        good = [(*r[:7], SOURCES.get(r[3], ("", "", 0, ""))[2], *r[7:]) for r in batch
-                if r[3] not in EXCLUDED and r[1] in kept]
+        good = []
+        for r in batch:
+            if r[3] in EXCLUDED or r[1] not in kept:
+                continue
+            en, en_ml = r[5], r[7]
+            if en and en_ml and len(en) < 200 and ML_NOTE.search(en):
+                en, en_ml = None, None
+                notes += 1
+            good.append((*r[:5], en, r[6], SOURCES.get(r[3], ("", "", 0, ""))[2], en_ml))
         skipped += len(batch) - len(good)
         db.executemany("insert into sentences values (?,?,?,?,?,?,?,?,?)", good)
         n += len(good)
-    log(f"sentences kept {n}, left out {skipped}")
+    log(f"sentences kept {n}, left out {skipped}, model notes dropped from English {notes}")
     unknown = db.execute("select distinct source from sentences").fetchall()
     unknown = {s for (s,) in unknown} - set(SOURCES)
     unknown |= {s for s in kept.values()} - set(SOURCES)
@@ -191,6 +206,7 @@ def build(out: Path) -> None:
         "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"),
         "excluded": json.dumps(EXCLUDED),
         "page_size": str(PAGE_SIZE),
+        "ml_notes_dropped": str(notes),
     }
     db.executemany("insert into meta values (?,?)", meta.items())
     db.executescript("""
@@ -247,6 +263,10 @@ def licenses_md(db_path: Path) -> str:
     for model, n in db.execute("""select en_ml, count(*) from sentences where en_ml is not null
             group by 1 order by 2 desc"""):
         lines.append(f"- `{model}`: {n:,}")
+    notes = db.execute("select value from meta where key='ml_notes_dropped'").fetchone()
+    if notes:
+        lines += ["", f"{int(notes[0]):,} machine \"translations\" that were really model notes (for example",
+                  "\"[No translation available]\") are dropped; those sentences show transliteration and German."]
     lines += [
         "",
         "## Left out",
