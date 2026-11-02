@@ -1,0 +1,27 @@
+pub mod actor;
+pub mod agent_state;
+pub mod atmosphere;
+pub mod command_server;
+pub mod composition;
+pub mod engine;
+pub mod hermes;
+pub mod input;
+pub mod inventory;
+pub mod librarian;
+pub mod pathfinding;
+pub mod scribe;
+pub mod tile;
+pub mod typology;
+pub mod world;
+
+pub use actor::{Actor, ActorKind};
+pub use atmosphere::{era_name_from_z, display_district, atmospheric_text, composition_summary, room_name_from_cluster};
+pub use command_server::{CommandAck, CommandRequest};
+pub use composition::RoomComposition;
+pub use engine::{Action, ActionResult, Engine};
+pub use hermes::{HermesBridge, HermesEvent, ChatMessage, ChatRole, ChatStatus, ContextHeader, GameCommand, TokenBudget};
+pub use inventory::Inventory;
+pub use scribe::{ScribeBridge, ScribeEvent, ScribeStatus};
+pub use tile::{Tile, ShaftKind};
+pub use typology::RoomType;
+pub use world::{WorldMap, WorldTile, LoadedRoom, HexFace, HallStyle, FixtureMeta};

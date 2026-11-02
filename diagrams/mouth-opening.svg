@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750" font-family="'JetBrains Mono','Fira Code','Cascadia Code','Consolas',monospace">
+  <defs>
+    <marker id="arr-gold" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0.5 L9,3 L0,5.5" fill="none" stroke="#dcb428" stroke-width="1"/>
+    </marker>
+    <radialGradient id="vig" cx="55%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#0e0c09"/>
+      <stop offset="70%" stop-color="#0c0a08"/>
+      <stop offset="100%" stop-color="#050403"/>
+    </radialGradient>
+    <filter id="lg" x="-10%" y="-80%" width="120%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="750" fill="url(#vig)"/>
+
+  <!-- Particles -->
+  <g opacity="0.11">
+    <circle cx="80" cy="300" r="1" fill="#dcb428"/><circle cx="1320" cy="250" r="0.7" fill="#50dcc8"/>
+    <circle cx="700" cy="50" r="0.8" fill="#f0ebe0"/><circle cx="250" cy="550" r="0.6" fill="#c050b8"/>
+    <circle cx="1100" cy="500" r="0.7" fill="#00c853"/><circle cx="500" cy="650" r="0.8" fill="#377d73"/>
+  </g>
+
+  <!-- Era strip -->
+  <g>
+    <rect x="0" y="0" width="5" height="94" fill="#8c7346" opacity="0.7"/>
+    <rect x="0" y="94" width="5" height="94" fill="#a08250" opacity="0.7"/>
+    <rect x="0" y="188" width="5" height="93" fill="#645a4b" opacity="0.7"/>
+    <rect x="0" y="281" width="5" height="94" fill="#967846" opacity="0.7"/>
+    <rect x="0" y="375" width="5" height="94" fill="#5a5046" opacity="0.7"/>
+    <rect x="0" y="469" width="5" height="93" fill="#554696" opacity="0.7"/>
+    <rect x="0" y="562" width="5" height="94" fill="#4b7355" opacity="0.7"/>
+    <rect x="0" y="656" width="5" height="94" fill="#377d73" opacity="0.7"/>
+  </g>
+
+  <!-- ═══ TITLE ═══ -->
+  <text x="700" y="30" text-anchor="middle" font-size="20" fill="#f0ebe0" letter-spacing="5" font-weight="bold">THE MOUTH-OPENING</text>
+  <text x="700" y="52" text-anchor="middle" font-size="12" fill="#8a7a58" letter-spacing="3">wpt-rꜣ — FROM SILENCE TO SCHOLARSHIP</text>
+  <line x1="460" y1="60" x2="940" y2="60" stroke="#dcb428" stroke-width="0.4" opacity="0.3"/>
+
+  <!-- Brightness arc -->
+  <text x="50" y="82" font-size="11" fill="#6b5c3a">sealed</text>
+  <line x1="95" y1="79" x2="1305" y2="79" stroke="#dcb428" stroke-width="0.5" opacity="0.08"/>
+  <text x="1310" y="82" font-size="11" fill="#dcb428" opacity="0.6">voiced</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--         STAGE 1: GATHER (green, dim)                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <rect x="40" y="95" width="285" height="370" rx="4" fill="#0a0908" stroke="#00c853" stroke-width="1" opacity="0.5"/>
+  <rect x="40" y="95" width="285" height="22" rx="4" fill="#0d1a0d" opacity="0.5"/>
+  <text x="182" y="111" text-anchor="middle" font-size="11" fill="#00c853" opacity="0.4">stage 1</text>
+
+  <text x="182" y="145" text-anchor="middle" font-size="24" fill="#00c853" opacity="0.6" font-weight="bold">@@</text>
+  <text x="182" y="168" text-anchor="middle" font-size="15" fill="#00c853" opacity="0.7" letter-spacing="3" font-weight="bold">GATHER</text>
+  <text x="182" y="186" text-anchor="middle" font-size="12" fill="#8a7a58" opacity="0.7">Player walks the corpus</text>
+
+  <!-- Small hex icon — the source -->
+  <g transform="translate(90,218)" opacity="0.4">
+    <polygon points="0,-18 16,-9 16,9 0,18 -16,9 -16,-9" fill="none" stroke="#00c853" stroke-width="0.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="11" fill="#00c853">≡≡</text>
+  </g>
+  <text x="115" y="215" font-size="12" fill="#a08c60" opacity="0.6">Hex rooms · shelves</text>
+  <text x="115" y="233" font-size="12" fill="#a08c60" opacity="0.6">Volumes on walls</text>
+
+  <!-- Pages being gathered (the physical scrolls) -->
+  <text x="60" y="260" font-size="11" fill="#00c853" opacity="0.5">$ press [G]</text>
+
+  <rect x="60" y="270" width="180" height="22" rx="2" fill="#141210" stroke="#a08c60" stroke-width="0.5" opacity="0.5"/>
+  <text x="68" y="285" font-size="11" fill="#a08c60" opacity="0.6">≡ aeg_oraec_38</text>
+  <text x="220" y="285" font-size="11" fill="#6b5c3a" opacity="0.4">Ebers</text>
+
+  <rect x="60" y="298" width="180" height="22" rx="2" fill="#141210" stroke="#a08c60" stroke-width="0.5" opacity="0.5"/>
+  <text x="68" y="313" font-size="11" fill="#a08c60" opacity="0.6">≡ aeg_oraec_91</text>
+  <text x="220" y="313" font-size="11" fill="#6b5c3a" opacity="0.4">Edwin Smith</text>
+
+  <rect x="60" y="326" width="180" height="22" rx="2" fill="#141210" stroke="#a08c60" stroke-width="0.5" opacity="0.5"/>
+  <text x="68" y="341" font-size="11" fill="#a08c60" opacity="0.6">≡ aeg_tla_hf_12</text>
+  <text x="220" y="341" font-size="11" fill="#6b5c3a" opacity="0.4">Book of Dead</text>
+
+  <text x="60" y="375" font-size="11" fill="#8a7a58" opacity="0.5">Inventory: 3 volumes</text>
+  <text x="60" y="393" font-size="11" fill="#8a7a58" opacity="0.5">Gathered from 2 rooms</text>
+
+  <text x="60" y="425" font-size="11" fill="#6b5c3a" opacity="0.4">3,000 years of silence.</text>
+  <text x="60" y="443" font-size="11" fill="#6b5c3a" opacity="0.4">The scrolls wait, sealed.</text>
+
+  <!-- ═══ ARROW 1→2: pages flow as canonical IDs ═══ -->
+  <g filter="url(#lg)">
+    <line x1="329" y1="300" x2="356" y2="300" stroke="#dcb428" stroke-width="1.3" marker-end="url(#arr-gold)"/>
+  </g>
+  <!-- Flowing page indicators -->
+  <rect x="332" y="318" width="22" height="14" rx="1" fill="#141210" stroke="#a08c60" stroke-width="0.4" opacity="0.4"/>
+  <rect x="336" y="336" width="22" height="14" rx="1" fill="#141210" stroke="#a08c60" stroke-width="0.4" opacity="0.3"/>
+  <rect x="334" y="354" width="22" height="14" rx="1" fill="#141210" stroke="#a08c60" stroke-width="0.4" opacity="0.2"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--         STAGE 2: INVOKE (magenta, medium)               -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <rect x="365" y="95" width="285" height="370" rx="4" fill="#0a0908" stroke="#c050b8" stroke-width="1" opacity="0.7"/>
+  <rect x="365" y="95" width="285" height="22" rx="4" fill="#1a0d18" opacity="0.7"/>
+  <text x="507" y="111" text-anchor="middle" font-size="11" fill="#c050b8" opacity="0.5">stage 2</text>
+
+  <text x="507" y="145" text-anchor="middle" font-size="24" fill="#c050b8" opacity="0.8" font-weight="bold">&amp;&amp;</text>
+  <text x="507" y="168" text-anchor="middle" font-size="15" fill="#c050b8" opacity="0.8" letter-spacing="3" font-weight="bold">INVOKE</text>
+  <text x="507" y="186" text-anchor="middle" font-size="12" fill="#8a7a58">Librarian assembles</text>
+
+  <text x="385" y="212" font-size="12" fill="#a08c60" opacity="0.7">"Write about these texts"</text>
+
+  <text x="385" y="238" font-size="12" fill="#c050b8" opacity="0.7">⟐ {"command": "scribe",</text>
+  <text x="385" y="256" font-size="12" fill="#c050b8" opacity="0.7">   "volumes": [3 IDs]}</text>
+
+  <text x="385" y="284" font-size="12" fill="#a08c60" opacity="0.7">Fetches full text via BFS</text>
+  <text x="385" y="302" font-size="11" fill="#8a7a58">get_volume for each ID</text>
+
+  <!-- Passage block being assembled -->
+  <text x="385" y="330" font-size="11" fill="#8a7a58">Passage block assembled:</text>
+
+  <rect x="385" y="340" width="245" height="68" rx="3" fill="#141210" stroke="#c050b8" stroke-width="0.6" opacity="0.5"/>
+  <text x="395" y="356" font-size="11" fill="#a08c60" opacity="0.7">wn.jn ḥr sḏm=f mdw.t n.t ns</text>
+  <text x="395" y="372" font-size="11" fill="#8a7a58" opacity="0.6">Then he heard the speech...</text>
+  <text x="395" y="390" font-size="11" fill="#8a7a58" opacity="0.6">24 sentences × 3 volumes</text>
+  <text x="395" y="402" font-size="11" fill="#6b5c3a" opacity="0.5">× 72 bilingual passages</text>
+
+  <text x="385" y="443" font-size="11" fill="#6b5c3a" opacity="0.5">The offering is assembled.</text>
+
+  <!-- ═══ ARROW 2→3: passage block flows ═══ -->
+  <g filter="url(#lg)">
+    <line x1="654" y1="300" x2="681" y2="300" stroke="#dcb428" stroke-width="1.3" marker-end="url(#arr-gold)"/>
+  </g>
+  <!-- Passage block indicator -->
+  <rect x="656" y="318" width="26" height="40" rx="2" fill="#141210" stroke="#c050b8" stroke-width="0.5" opacity="0.5"/>
+  <text x="669" y="342" text-anchor="middle" font-size="16" fill="#c050b8" opacity="0.3">≡</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--         STAGE 3: REASON (cyan, bright)                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <rect x="690" y="95" width="285" height="370" rx="4" fill="#0a0908" stroke="#00d2d2" stroke-width="1" opacity="0.85"/>
+  <rect x="690" y="95" width="285" height="22" rx="4" fill="#0d1618" opacity="0.85"/>
+  <text x="832" y="111" text-anchor="middle" font-size="11" fill="#00d2d2" opacity="0.6">stage 3</text>
+
+  <text x="832" y="145" text-anchor="middle" font-size="24" fill="#00d2d2" opacity="0.9" font-weight="bold">%%</text>
+  <text x="832" y="168" text-anchor="middle" font-size="15" fill="#00d2d2" opacity="0.9" letter-spacing="3" font-weight="bold">REASON</text>
+  <text x="832" y="186" text-anchor="middle" font-size="12" fill="#8a7a58">Kimi K2.6 discovers</text>
+
+  <text x="710" y="212" font-size="12" fill="#a08c60">delta.reasoning streams live</text>
+  <text x="710" y="230" font-size="12" fill="#a08c60">Connections across millennia</text>
+
+  <!-- Reasoning text — the ceremony unfolds -->
+  <rect x="710" y="245" width="245" height="110" rx="3" fill="#0a1214" stroke="#00d2d2" stroke-width="0.5" opacity="0.6"/>
+  <text x="720" y="263" font-size="11" fill="#00d2d2" opacity="0.6" font-style="italic">"The heart (jb) appears in</text>
+  <text x="720" y="279" font-size="11" fill="#00d2d2" opacity="0.6" font-style="italic"> both the Ebers papyrus and</text>
+  <text x="720" y="295" font-size="11" fill="#00d2d2" opacity="0.6" font-style="italic"> the Book of the Dead — the</text>
+  <text x="720" y="311" font-size="11" fill="#00d2d2" opacity="0.6" font-style="italic"> organ that weighs moral</text>
+  <text x="720" y="327" font-size="11" fill="#00d2d2" opacity="0.6" font-style="italic"> cognition against ma'at..."</text>
+  <text x="720" y="349" font-size="11" fill="#6b5c3a" opacity="0.5">← visible chain-of-thought</text>
+
+  <text x="710" y="378" font-size="12" fill="#a08c60">Kimi K2.6 via Nous Portal</text>
+  <text x="710" y="396" font-size="11" fill="#8a7a58">Multilingual: Egyptian + EN + DE</text>
+  <text x="710" y="414" font-size="11" fill="#8a7a58">The user watches Kimi think.</text>
+
+  <text x="710" y="443" font-size="11" fill="#6b5c3a" opacity="0.6">The ceremony unfolds.</text>
+
+  <!-- ═══ ARROW 3→4: article emerges ═══ -->
+  <g filter="url(#lg)">
+    <line x1="979" y1="300" x2="1006" y2="300" stroke="#dcb428" stroke-width="1.3" marker-end="url(#arr-gold)"/>
+  </g>
+  <!-- Article page indicator -->
+  <rect x="982" y="316" width="26" height="46" rx="2" fill="#141210" stroke="#dcb428" stroke-width="0.6" opacity="0.7"/>
+  <text x="995" y="332" text-anchor="middle" font-size="11" fill="#dcb428" opacity="0.4">A</text>
+  <text x="995" y="348" text-anchor="middle" font-size="11" fill="#dcb428" opacity="0.3">r</text>
+  <text x="995" y="358" text-anchor="middle" font-size="11" fill="#dcb428" opacity="0.2">t</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--         STAGE 4: VOICE (gold, brightest)                -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <rect x="1015" y="95" width="355" height="370" rx="4" fill="#0a0908" stroke="#dcb428" stroke-width="1.2"/>
+  <rect x="1015" y="95" width="355" height="22" rx="4" fill="#1a1508"/>
+  <text x="1192" y="111" text-anchor="middle" font-size="11" fill="#dcb428" opacity="0.7">stage 4</text>
+
+  <text x="1192" y="142" text-anchor="middle" font-size="20" fill="#dcb428" font-weight="bold">wpt-rꜣ</text>
+  <text x="1192" y="166" text-anchor="middle" font-size="15" fill="#dcb428" letter-spacing="3" font-weight="bold">VOICE</text>
+  <text x="1192" y="184" text-anchor="middle" font-size="12" fill="#a08c60">Speech restored</text>
+
+  <text x="1035" y="210" font-size="13" fill="#f0ebe0">Scholarly article emerges</text>
+  <text x="1035" y="232" font-size="12" fill="#a08c60">2,500–4,000 words</text>
+  <text x="1035" y="252" font-size="12" fill="#a08c60">8–15 direct quotations</text>
+  <text x="1035" y="272" font-size="12" fill="#a08c60">Each cited by canonical ID</text>
+
+  <!-- Article with citations referencing the original pages -->
+  <rect x="1035" y="288" width="315" height="95" rx="3" fill="#141210" stroke="#dcb428" stroke-width="0.6" opacity="0.8"/>
+  <text x="1045" y="306" font-size="12" fill="#f0ebe0">"As the Ebers papyrus states:</text>
+  <text x="1045" y="324" font-size="12" fill="#dcb428" opacity="0.8"> wn.jn ḥr sḏm=f mdw.t n.t ns</text>
+  <text x="1045" y="342" font-size="12" fill="#f0ebe0"> 'he heard the speech of</text>
+  <text x="1045" y="360" font-size="12" fill="#f0ebe0">  the tongue'</text>
+  <!-- The page reference — completing the circle -->
+  <rect x="1185" y="349" width="140" height="18" rx="2" fill="#1a1510" stroke="#a08c60" stroke-width="0.5" opacity="0.8"/>
+  <text x="1193" y="362" font-size="11" fill="#a08c60">(aeg_oraec_38)</text>
+  <text x="1340" y="362" font-size="11" fill="#6b5c3a" opacity="0.6">←</text>
+
+  <text x="1035" y="405" font-size="11" fill="#8a7a58">Saved: ~/Aegyptus/Articles/</text>
+  <text x="1035" y="423" font-size="11" fill="#8a7a58">Metadata: date, sources, model</text>
+
+  <text x="1035" y="452" font-size="11" fill="#dcb428" opacity="0.7">Texts given voice after 3,000 years.</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--              BOTTOM: CONTEXT                            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <line x1="60" y1="490" x2="1340" y2="490" stroke="#dcb428" stroke-width="0.6" opacity="0.2"/>
+
+  <!-- Pipeline flow -->
+  <text x="60" y="520" font-size="14" fill="#a08c60" letter-spacing="2" font-weight="bold">DATA LINEAGE</text>
+  <text x="60" y="544" font-size="12" fill="#a08c60">Shelf → Inventory → Passage Block → Kimi K2.6 → Article</text>
+  <text x="60" y="564" font-size="12" fill="#8a7a58">Same canonical IDs end to end. No intermediate format.</text>
+  <text x="60" y="584" font-size="11" fill="#6b5c3a">aeg_oraec_38 on the shelf = aeg_oraec_38 in the citation</text>
+
+  <!-- Kimi capabilities -->
+  <text x="560" y="520" font-size="14" fill="#a08c60" letter-spacing="2" font-weight="bold">KIMI K2.6</text>
+  <text x="560" y="544" font-size="12" fill="#a08c60">Long context — holds all source material</text>
+  <text x="560" y="564" font-size="12" fill="#a08c60">Extended thinking — delta.reasoning visible</text>
+  <text x="560" y="584" font-size="12" fill="#a08c60">Multilingual — Egyptian translit + EN + DE</text>
+  <text x="560" y="604" font-size="11" fill="#8a7a58">Nous Portal API · Model fallback</text>
+
+  <!-- The ceremony -->
+  <text x="990" y="520" font-size="14" fill="#dcb428" letter-spacing="2" font-weight="bold" opacity="0.7">THE CEREMONY</text>
+  <text x="990" y="544" font-size="12" fill="#8a7a58">Every Egyptian text was a living</text>
+  <text x="990" y="564" font-size="12" fill="#8a7a58">entity. Sealed in a tomb, it was</text>
+  <text x="990" y="584" font-size="12" fill="#8a7a58">dormant — not dead, but silent.</text>
+  <text x="990" y="604" font-size="12" fill="#8a7a58">The Mouth-Opening restored voice</text>
+  <text x="990" y="624" font-size="12" fill="#8a7a58">to what had been sealed.</text>
+
+  <!-- Paradigm statement -->
+  <line x1="200" y1="650" x2="1200" y2="650" stroke="#dcb428" stroke-width="0.6" opacity="0.2"/>
+  <text x="700" y="676" text-anchor="middle" font-size="14" fill="#dcb428" font-style="italic" opacity="0.6">The corpus lay silent until someone picked up a scroll and gave it voice.</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="700" x2="1300" y2="700" stroke="#1e1c18" stroke-width="0.4" opacity="0.3"/>
+  <text x="700" y="720" text-anchor="middle" font-size="11" fill="#4a4030" letter-spacing="1">Hermes Agent (operational) · Kimi K2.6 (synthesis) · Nous Portal · Aegyptus Corpus</text>
+</svg>

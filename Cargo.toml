@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "stacks-engine",
+    "hex2d-stacks",
+    "bfs-client",
+]
+resolver = "2"

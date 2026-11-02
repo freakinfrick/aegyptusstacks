@@ -1,0 +1,50 @@
+# Rust
+/target/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+*.egg
+dist/
+build/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# BFS generated state (can be rebuilt)
+bfs/data/
+
+# Redis
+dump.rdb
+
+# Model files
+*.gguf
+
+# Articles (generated output)
+articles/
+
+# Runtime state
+.bfs.pid
+
+# Sync state (contains local paths)
+.sync-state

@@ -1,0 +1,23 @@
+model:
+  # Any OpenAI-compatible endpoint — ollama, llama-server, vllm, etc.
+  # Override with LLM_API_BASE and LLM_MODEL environment variables.
+  name: hermes3:8b
+  api_base: http://localhost:11434/v1
+  context_length: 8192
+
+system_prompt: system_prompt.md
+
+skills:
+  - bfs-search
+  - bfs-navigate
+  - bfs-gather
+  - bfs-read
+  - bfs-article
+  - bfs-annotate
+  - bfs-describe
+  - bfs-pathfind
+
+settings:
+  max_turns: 50
+  temperature: 0.7
+  max_tokens: 512

@@ -1,0 +1,172 @@
+districts:
+  necropolis:
+    description: Tombs, coffins, false doors, funerary texts
+    text_types:
+    - Felsgrab
+    - Grab
+    - Kanopenkrug
+    - Mastabagrab
+    - Sarg
+    - Scheintür
+    - funerary
+    estimated_size: 10805
+    physical_types:
+    - canopic_jar
+    - coffin
+    - false_door
+    - funerary_text
+    - mastaba
+    - object
+    - ostracon
+    - rectangular_stele
+    - rock_tomb
+    - rounded_stele
+    - scroll
+    - stele
+    - tomb
+    - undetermined
+    - unknown
+  temple:
+    description: Temple inscriptions, liturgy, hymns, architectural elements
+    text_types:
+    - Altar
+    - Architrav
+    - Fassade
+    - Gebäude & Konstruktionen
+    - Gebäude + Konstruktionen
+    - Laibung
+    - Naos
+    - Opferbecken
+    - Opfertafel
+    - Pfeiler
+    - Rahmen
+    - Raum
+    - Sturz
+    - Stütze
+    - Säule
+    - Tempel
+    - Tür
+    - religious
+    estimated_size: 3091
+    physical_types:
+    - altar
+    - architrave
+    - building
+    - chamber
+    - column
+    - door_reveal
+    - doorway
+    - facade
+    - frame
+    - lintel
+    - naos
+    - offering_basin
+    - offering_table
+    - pillar
+    - religious_text
+    - support
+    - temple_structure
+    - theological_text
+    - unknown
+  house_of_life:
+    description: Medical, magical, ritual scrolls — the pr-ankh
+    text_types:
+    - Wand
+    - Ächtungsfigur
+    estimated_size: 9004
+    physical_types:
+    - execration_figure
+    - magic_wand
+    - object
+    - ostracon
+    - philosophical_text
+    - rounded_stele
+    - scroll
+    - stele
+    - undetermined
+    - unknown
+  admin:
+    description: Letters, legal, economic texts — administrative quarter
+    text_types:
+    - administrative
+    - historical
+    estimated_size: 25066
+    physical_types:
+    - admin_text
+    - historical_text
+    - object
+    - ostracon
+    - papyrus
+    - rectangular_stele
+    - rounded_stele
+    - scroll
+    - stele
+    - undetermined
+    - unknown
+    - writing_medium
+  school:
+    description: Student exercises, model texts, ostraca, writing boards
+    text_types:
+    - Schreibblatt
+    - Schreibtafel
+    - literary
+    estimated_size: 173
+    physical_types:
+    - literary_text
+    - ostracon
+    - writing_board
+    - writing_medium
+    - writing_tablet
+  quarry:
+    description: Rock inscriptions, quarry marks, expedition graffiti
+    text_types:
+    - Fels
+    estimated_size: 646
+    physical_types:
+    - rock
+  royal:
+    description: Royal sculpture, monumental stele, decrees
+    text_types:
+    - König
+    - Skulptur
+    - Statue / Figur
+    estimated_size: 3380
+    physical_types:
+    - object
+    - ostracon
+    - rectangular_stele
+    - rounded_stele
+    - royal_text
+    - scroll
+    - sculpture
+    - statue
+    - stele
+    - undetermined
+    - unknown
+    - writing_medium
+  domestic:
+    description: Vessels, artifacts, household objects, personal items
+    text_types:
+    - Artefakt
+    - Etikett
+    - Gefäß
+    - Kopfstütze
+    - Salbölpalette
+    - Textilien
+    estimated_size: 2190
+    physical_types:
+    - artifact
+    - cosmetic_palette
+    - headrest
+    - label
+    - object
+    - textile
+    - unknown
+    - vessel
+  unplaced:
+    description: Texts without sufficient metadata for district assignment
+    text_types: []
+    estimated_size: 23328
+    physical_types:
+    - undetermined
+    - unknown

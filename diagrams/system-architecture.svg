@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 870" font-family="'JetBrains Mono','Fira Code','Cascadia Code','Consolas',monospace">
+  <defs>
+    <marker id="arr-gold" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="8" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0.5 L9,3 L0,5.5" fill="none" stroke="#dcb428" stroke-width="1"/>
+    </marker>
+    <marker id="arr-cyan" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="8" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0.5 L9,3 L0,5.5" fill="none" stroke="#50dcc8" stroke-width="1"/>
+    </marker>
+    <marker id="arr-sand" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="8" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0.5 L9,3 L0,5.5" fill="none" stroke="#a08c60" stroke-width="1"/>
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="8" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0.5 L9,3 L0,5.5" fill="none" stroke="#00c853" stroke-width="1"/>
+    </marker>
+    <radialGradient id="vig" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#0e0c09"/>
+      <stop offset="70%" stop-color="#0c0a08"/>
+      <stop offset="100%" stop-color="#050403"/>
+    </radialGradient>
+    <filter id="lg" x="-10%" y="-80%" width="120%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="870" fill="url(#vig)"/>
+
+  <!-- Particles -->
+  <g opacity="0.11">
+    <circle cx="95" cy="380" r="1" fill="#dcb428"/><circle cx="890" cy="120" r="0.7" fill="#f0c878"/>
+    <circle cx="1310" cy="650" r="1" fill="#a08c60"/><circle cx="340" cy="800" r="0.7" fill="#dcb428"/>
+    <circle cx="60" cy="38" r="0.8" fill="#f0ebe0"/><circle cx="1280" cy="500" r="0.6" fill="#50dcc8"/>
+    <circle cx="185" cy="260" r="0.7" fill="#c050b8"/><circle cx="1350" cy="780" r="0.8" fill="#377d73"/>
+    <circle cx="40" cy="620" r="0.6" fill="#dcb428"/><circle cx="1360" cy="200" r="0.9" fill="#f0ebe0"/>
+  </g>
+
+  <!-- Era strip -->
+  <g>
+    <rect x="0" y="0" width="5" height="109" fill="#8c7346" opacity="0.7"/>
+    <rect x="0" y="109" width="5" height="109" fill="#a08250" opacity="0.7"/>
+    <rect x="0" y="218" width="5" height="108" fill="#645a4b" opacity="0.7"/>
+    <rect x="0" y="326" width="5" height="109" fill="#967846" opacity="0.7"/>
+    <rect x="0" y="435" width="5" height="109" fill="#5a5046" opacity="0.7"/>
+    <rect x="0" y="544" width="5" height="108" fill="#554696" opacity="0.7"/>
+    <rect x="0" y="652" width="5" height="109" fill="#4b7355" opacity="0.7"/>
+    <rect x="0" y="761" width="5" height="109" fill="#377d73" opacity="0.7"/>
+  </g>
+
+  <!-- ═══ TITLE ═══ -->
+  <text x="700" y="32" text-anchor="middle" font-size="20" fill="#f0ebe0" letter-spacing="5" font-weight="bold">AEGYPTUS: THE LABYRINTH</text>
+  <text x="700" y="54" text-anchor="middle" font-size="12" fill="#8a7a58" letter-spacing="3">SYSTEM ARCHITECTURE</text>
+  <line x1="500" y1="62" x2="900" y2="62" stroke="#dcb428" stroke-width="0.4" opacity="0.3"/>
+
+  <!--
+    EXPLODED PYRAMID with capstone
+    Main slope: ±0.46875/px from reference (400,80)→(1000,80)
+    At y: left = 400 - 0.46875*(y-80), right = 1000 + 0.46875*(y-80)
+
+    T0 CAPSTONE: triangle (700,72)(615,130)(785,130)       — PLAYER
+    gap 25px
+    T1 RENDER:   y=155–270   (365,155)(1035,155)(1089,270)(311,270)   — stacks-engine
+    gap 30px
+    T2 AGENTS:   y=300–435   (297,300)(1103,300)(1166,435)(234,435)   — center x=700
+    gap 30px
+    T3 BFS:      y=465–540   (220,465)(1180,465)(1215,540)(185,540)
+    gap 22px
+    T4 TOPOLOGY: y=562–620   (174,562)(1226,562)(1253,620)(147,620)
+    gap 18px
+    T5 CORPUS:   y=638–700   (138,638)(1262,638)(1291,700)(109,700)
+    gap 18px
+    T6 TEXTS:    y=718–792   (101,718)(1299,718)(1334,792)(66,792)
+  -->
+
+  <!-- Ghost outline -->
+  <polygon points="700,72 1334,792 66,792" fill="none" stroke="#2a2520" stroke-width="0.5" stroke-dasharray="8,5" opacity="0.12"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--                   TIER POLYGONS                         -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- T0: CAPSTONE (Player) — green border -->
+  <polygon points="700,72 1035,155 365,155" fill="#0f0d0a" stroke="#00c853" stroke-width="1" opacity="0.9"/>
+  <line x1="700" y1="72" x2="365" y2="155" stroke="#00c853" stroke-width="2.5" opacity="0.5"/>
+  <line x1="700" y1="72" x2="1035" y2="155" stroke="#00c853" stroke-width="2.5" opacity="0.5"/>
+  <line x1="365" y1="155" x2="1035" y2="155" stroke="#00c853" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- T1: RENDER — gold/tan border (engine = system) -->
+  <polygon points="365,155 1035,155 1089,270 311,270" fill="#0f0d0a" stroke="#dcb428" stroke-width="1" opacity="0.7"/>
+
+  <!-- T2: AGENTS — left half magenta, right half cyan (split by center line) -->
+  <polygon points="297,300 700,300 700,435 234,435" fill="#0f0d0a" stroke="#c050b8" stroke-width="1" opacity="0.7"/>
+  <polygon points="700,300 1103,300 1166,435 700,435" fill="#0f0d0a" stroke="#00d2d2" stroke-width="1" opacity="0.7"/>
+  <!-- center divider now formed by the two polygon edges -->
+
+  <!-- T3: BFS — teal border -->
+  <polygon points="220,465 1180,465 1215,540 185,540" fill="#0f0d0a" stroke="#377d73" stroke-width="1" opacity="0.7"/>
+  <polygon points="220,465 1180,465 1215,540 185,540" fill="#377d73" opacity="0.04"/>
+
+  <!-- T4: TOPOLOGY — honey -->
+  <polygon points="174,562 1226,562 1253,620 147,620" fill="#0f0d0a" stroke="#967846" stroke-width="1" opacity="0.5"/>
+
+  <!-- T5: CORPUS — sandstone -->
+  <polygon points="138,638 1262,638 1291,700 109,700" fill="#0f0d0a" stroke="#a08250" stroke-width="1" opacity="0.5"/>
+
+  <!-- T6: TEXTS — amber -->
+  <polygon points="101,718 1299,718 1334,792 66,792" fill="#0f0d0a" stroke="#8c7346" stroke-width="1" opacity="0.5"/>
+
+  <!-- ═══ Accent edges ═══ -->
+  <!-- T1 RENDER — gold -->
+  <line x1="365" y1="155" x2="311" y2="270" stroke="#dcb428" stroke-width="3" opacity="0.4"/>
+  <line x1="1035" y1="155" x2="1089" y2="270" stroke="#dcb428" stroke-width="3" opacity="0.4"/>
+  <!-- T2 NAVIGATE — magenta left -->
+  <line x1="297" y1="300" x2="234" y2="435" stroke="#c050b8" stroke-width="3" opacity="0.4"/>
+  <!-- T2 SYNTHESIZE — cyan right -->
+  <line x1="1103" y1="300" x2="1166" y2="435" stroke="#00d2d2" stroke-width="3" opacity="0.4"/>
+  <!-- T3 BFS — teal both -->
+  <line x1="220" y1="465" x2="185" y2="540" stroke="#377d73" stroke-width="3" opacity="0.5"/>
+  <line x1="1180" y1="465" x2="1215" y2="540" stroke="#377d73" stroke-width="3" opacity="0.5"/>
+  <!-- T4–T6 -->
+  <line x1="174" y1="562" x2="147" y2="620" stroke="#967846" stroke-width="2.5" opacity="0.35"/>
+  <line x1="138" y1="638" x2="109" y2="700" stroke="#a08250" stroke-width="2.5" opacity="0.35"/>
+  <line x1="101" y1="718" x2="66" y2="792" stroke="#8c7346" stroke-width="2.5" opacity="0.35"/>
+  <line x1="1299" y1="718" x2="1334" y2="792" stroke="#8c7346" stroke-width="2.5" opacity="0.35"/>
+
+  <!-- Hex decorations in BFS -->
+  <g opacity="0.05" stroke="#50dcc8" fill="none" stroke-width="0.6">
+    <polygon points="310,490 325,480 340,490 340,510 325,520 310,510"/>
+    <polygon points="500,485 515,475 530,485 530,505 515,515 500,505"/>
+    <polygon points="700,492 715,482 730,492 730,512 715,522 700,512"/>
+    <polygon points="900,488 915,478 930,488 930,508 915,518 900,508"/>
+    <polygon points="1080,492 1095,482 1110,492 1110,512 1095,522 1080,512"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--              CONNECTION LINES (in the gaps)             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- GAP 1 (y=270–300): RENDER → AGENTS -->
+
+  <!-- FIFO bridge (follows left slope, pulled center to clear labels) -->
+  <g filter="url(#lg)">
+    <line x1="600" y1="270" x2="530" y2="300" stroke="#dcb428" stroke-width="1.4" marker-start="url(#arr-gold)" marker-end="url(#arr-gold)"/>
+  </g>
+  <text x="420" y="282" font-size="11" fill="#dcb428" opacity="0.8">FIFO bridge</text>
+  <text x="420" y="298" font-size="11" fill="#6b5c3a">same JSON cmds</text>
+
+  <!-- JSON-RPC spine (center vertical) -->
+  <g filter="url(#lg)">
+    <line x1="700" y1="270" x2="700" y2="465" stroke="#50dcc8" stroke-width="1.5" marker-end="url(#arr-cyan)"/>
+  </g>
+  <circle cx="700" cy="270" r="2.5" fill="#50dcc8" opacity="0.5"/>
+  <text x="685" y="286" text-anchor="end" font-size="11" fill="#50dcc8" opacity="0.7">JSON-RPC</text>
+  <text x="685" y="300" text-anchor="end" font-size="11" fill="#50dcc8" opacity="0.7">:8081</text>
+
+  <!-- Subprocess (follows right slope, pulled center to clear labels) -->
+  <g filter="url(#lg)">
+    <line x1="800" y1="270" x2="870" y2="300" stroke="#dcb428" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arr-gold)"/>
+  </g>
+  <text x="885" y="282" font-size="11" fill="#dcb428" opacity="0.8">subprocess</text>
+  <text x="885" y="298" font-size="11" fill="#6b5c3a">stdout streaming</text>
+
+  <!-- GAP 2 (y=435–465): AGENTS → BFS -->
+
+  <!-- CLI tools (pulled center to clear labels) -->
+  <g filter="url(#lg)">
+    <line x1="540" y1="435" x2="480" y2="465" stroke="#dcb428" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arr-gold)"/>
+  </g>
+  <text x="340" y="448" font-size="11" fill="#dcb428" opacity="0.7">CLI tools</text>
+  <text x="340" y="464" font-size="11" fill="#6b5c3a">stacks-librarian.sh</text>
+
+  <!-- get_volume (pulled center to clear labels) -->
+  <g filter="url(#lg)">
+    <line x1="860" y1="435" x2="920" y2="465" stroke="#50dcc8" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arr-cyan)"/>
+  </g>
+  <text x="940" y="448" font-size="11" fill="#50dcc8" opacity="0.7">get_volume</text>
+  <text x="940" y="464" font-size="11" fill="#6b5c3a">JSON-RPC</text>
+
+  <!-- GAP 3 (y=540–562): Ground line + TOPOLOGY → BFS -->
+  <line x1="60" y1="540" x2="1340" y2="540" stroke="#a08c60" stroke-width="4" opacity="0.35"/>
+  <line x1="700" y1="558" x2="700" y2="543" stroke="#a08c60" stroke-width="1" marker-end="url(#arr-sand)"/>
+  <text x="716" y="555" font-size="11" fill="#8a7a58">deterministic codex</text>
+
+  <!-- GAP 4 (y=620–638): TOPOLOGY → CORPUS -->
+  <line x1="700" y1="635" x2="700" y2="623" stroke="#a08c60" stroke-width="1" marker-end="url(#arr-sand)"/>
+  <text x="716" y="633" font-size="11" fill="#8a7a58">entity resolution</text>
+
+  <!-- GAP 5 (y=700–718): CORPUS → TEXTS -->
+  <line x1="700" y1="715" x2="700" y2="703" stroke="#a08c60" stroke-width="1" marker-end="url(#arr-sand)"/>
+  <text x="716" y="713" font-size="11" fill="#8a7a58">import + dedup</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--                    TIER CONTENT                         -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- T0: CAPSTONE -->
+  <text x="700" y="105" text-anchor="middle" font-size="26" fill="#00c853" font-weight="bold">@@</text>
+  <text x="700" y="122" text-anchor="middle" font-size="12" fill="#a08c60">PLAYER</text>
+  <text x="700" y="146" text-anchor="middle" font-size="11" fill="#00c853" opacity="0.6">keystrokes ↓</text>
+
+  <!-- T1: RENDER -->
+  <text x="700" y="178" text-anchor="middle" font-size="15" fill="#dcb428" letter-spacing="3" font-weight="bold">RENDER</text>
+  <text x="700" y="200" text-anchor="middle" font-size="14" fill="#dcb428" letter-spacing="1" font-weight="bold">stacks-engine</text>
+  <text x="700" y="220" text-anchor="middle" font-size="12" fill="#a08c60">Rust TUI · ratatui · tokio · 28 tile types · torchlight · particles</text>
+  <text x="700" y="240" text-anchor="middle" font-size="12" fill="#a08c60">Rendering · Navigation · Agent UI · Era palettes · HUD</text>
+  <text x="700" y="260" text-anchor="middle" font-size="11" fill="#8a7a58">FIFO bridge to Hermes · Scribe subprocess · BFS client</text>
+
+  <!-- T2 LEFT: NAVIGATE -->
+  <text x="470" y="380" font-size="50" fill="#c050b8" opacity="0.04" text-anchor="end">&amp;&amp;</text>
+  <text x="318" y="326" font-size="14" fill="#c050b8" letter-spacing="3" font-weight="bold">NAVIGATE</text>
+  <text x="318" y="348" font-size="13" fill="#a08c60" font-weight="bold">Hermes Agent · Librarian</text>
+  <text x="318" y="368" font-size="12" fill="#a08c60">Carnice-27b · RTX 4090</text>
+  <text x="318" y="388" font-size="12" fill="#a08c60">Profile isolation · Sessions</text>
+  <text x="318" y="408" font-size="12" fill="#a08c60">5 BFS commands via CLI skill</text>
+  <text x="318" y="428" font-size="11" fill="#8a7a58">Context compression · Streaming · 220-line shim</text>
+
+  <!-- T2 RIGHT: SYNTHESIZE -->
+  <text x="1090" y="380" font-size="50" fill="#00d2d2" opacity="0.04" text-anchor="end">%%</text>
+  <text x="720" y="326" font-size="14" fill="#00d2d2" letter-spacing="3" font-weight="bold">SYNTHESIZE</text>
+  <text x="720" y="348" font-size="13" fill="#a08c60" font-weight="bold">Kimi Scribe</text>
+  <text x="720" y="368" font-size="12" fill="#a08c60">K2.6 via Nous Portal</text>
+  <text x="720" y="388" font-size="12" fill="#a08c60">Long-context scholarly synthesis</text>
+  <text x="720" y="408" font-size="12" fill="#a08c60">delta.reasoning live streaming</text>
+  <text x="720" y="428" font-size="11" fill="#8a7a58">2,500-4,000 word cited articles · Model fallback</text>
+
+  <!-- T3: BFS -->
+  <text x="240" y="493" font-size="16" fill="#377d73" letter-spacing="1" font-weight="bold">Babel File System</text>
+  <text x="240" y="513" font-size="12" fill="#a08c60">same data · same queries · same commands · same canonical IDs</text>
+  <text x="240" y="533" font-size="12" fill="#8a7a58">2,000+ rooms · 8 z-levels · 8 districts · JSON-RPC 2.0 · port 8081</text>
+  <text x="1205" y="536" text-anchor="end" font-size="11" fill="#6b5c3a">Deterministic codex · 3-tier safety · Librarian Protocol</text>
+
+  <!-- T4: TOPOLOGY -->
+  <text x="194" y="587" font-size="13" fill="#967846" letter-spacing="2" font-weight="bold">TOPOLOGY</text>
+  <text x="194" y="607" font-size="12" fill="#a08c60">Louvain clustering → hex rooms · doors · shafts · districts · z-levels</text>
+
+  <!-- T5: CORPUS -->
+  <text x="156" y="663" font-size="13" fill="#a08250" letter-spacing="2" font-weight="bold">CORPUS</text>
+  <text x="156" y="683" font-size="12" fill="#a08c60">PostgreSQL · 77,683 texts · 460,333 sentences · 35,052 lemmata · 269,433 concordance links</text>
+
+  <!-- T6: TEXTS -->
+  <text x="1290" y="762" font-size="16" fill="#8c7346" opacity="0.05" text-anchor="end">≡≡ ══ ││ ☥☥ ⊏⊐ ▐▌ ♦♦</text>
+  <text x="120" y="742" font-size="13" fill="#8c7346" letter-spacing="2" font-weight="bold">TEXTS</text>
+  <text x="120" y="762" font-size="12" fill="#a08c60">11 scholarly databases · 3,000 years · Hieroglyphic · Hieratic · Demotic · Coptic · Greek</text>
+  <text x="120" y="782" font-size="11" fill="#8a7a58">TLA · ORAEC · AES · AED-TEI · Coptic Scriptorium · Trismegistos · papyri.info · Nederhof · Met Museum</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--                        LEGEND                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <line x1="60" y1="810" x2="1340" y2="810" stroke="#1e1c18" stroke-width="0.4" opacity="0.3"/>
+
+  <g transform="translate(80,828)">
+    <circle cx="4" cy="0" r="3" fill="#00c853"/>
+    <text x="14" y="4" font-size="11" fill="#8a7a58">@@ Player</text>
+    <circle cx="110" cy="0" r="3" fill="#c050b8"/>
+    <text x="120" y="4" font-size="11" fill="#8a7a58">&amp;&amp; Librarian</text>
+    <circle cx="230" cy="0" r="3" fill="#00d2d2"/>
+    <text x="240" y="4" font-size="11" fill="#8a7a58">%% Scribe</text>
+
+    <line x1="340" y1="0" x2="362" y2="0" stroke="#dcb428" stroke-width="1.2"/>
+    <text x="370" y="4" font-size="11" fill="#8a7a58">FIFO</text>
+    <line x1="420" y1="0" x2="442" y2="0" stroke="#50dcc8" stroke-width="1.2"/>
+    <text x="450" y="4" font-size="11" fill="#8a7a58">JSON-RPC</text>
+    <line x1="540" y1="0" x2="562" y2="0" stroke="#dcb428" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="570" y="4" font-size="11" fill="#8a7a58">CLI tools</text>
+    <line x1="660" y1="0" x2="682" y2="0" stroke="#a08c60" stroke-width="1"/>
+    <text x="690" y="4" font-size="11" fill="#8a7a58">Data transform</text>
+
+    <text x="830" y="4" font-size="11" fill="#6b5c3a">~48,000 LOC · Rust + Python</text>
+    <text x="1080" y="4" font-size="11" fill="#6b5c3a" font-style="italic">Agents inhabit the substrate.</text>
+  </g>
+
+  <text x="700" y="858" text-anchor="middle" font-size="11" fill="#4a4030" letter-spacing="1">Nous Research x Kimi Creative Hackathon 2026</text>
+</svg>

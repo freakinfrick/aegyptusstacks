@@ -1,0 +1,89 @@
+Aegyptus Labyrinth
+Copyright 2026 freakinfrick
+
+================================================================================
+CODE LICENSE
+================================================================================
+
+All source code (Rust, Python, Shell, HTML/CSS/JS) in this repository is
+licensed under the MIT License. See LICENSE for the full text.
+
+================================================================================
+CORPUS DATA LICENSE
+================================================================================
+
+The corpus data bundled in data/corpus/ is assembled from open scholarly
+databases for research and educational purposes. Each source retains its
+original license. This project does not claim ownership of the underlying
+textual data — it provides a spatial interface to existing scholarship.
+
+Source databases and their licenses:
+
+  Thesaurus Linguae Aegyptiae (TLA)
+    Provider:  Berlin-Brandenburgische Akademie der Wissenschaften
+    License:   CC BY-SA 4.0
+    URL:       https://thesaurus-linguae-aegyptiae.de
+
+  ORAEC (Open Richly Annotated Cuneiform Corpus)
+    Provider:  Open source scholarly project
+    License:   CC BY-SA 3.0
+    URL:       https://oraec.github.io
+
+  AES (Ancient Egyptian Sentences)
+    Provider:  Open scholarly database
+    License:   Open access
+
+  AED-TEI (Altaegyptisches Woerterbuch)
+    Provider:  Berlin-Brandenburgische Akademie der Wissenschaften
+    License:   CC BY-SA 4.0
+
+  Coptic Scriptorium
+    Provider:  Georgetown University / University of the Pacific
+    License:   CC BY 4.0
+    URL:       https://copticscriptorium.org
+
+  Trismegistos
+    Provider:  KU Leuven
+    License:   Open access (non-commercial research use)
+    URL:       https://www.trismegistos.org
+
+  papyri.info / Integrating Digital Papyrology
+    Provider:  Duke University / Columbia University
+    License:   CC BY 3.0
+    URL:       https://papyri.info
+
+  PhilologEg (Nederhof)
+    Provider:  University of St Andrews
+    License:   Open access
+
+  RAMSES
+    Provider:  Universite de Liege
+    License:   CC BY-NC-SA
+    URL:       https://ramses.ulg.ac.be
+    Note:      Non-commercial, share-alike. The RAMSES-derived portions
+               of the corpus data carry this restriction regardless of
+               the project's MIT code license.
+
+  Metropolitan Museum of Art
+    Provider:  The Metropolitan Museum of Art, New York
+    License:   CC0 (Open Access)
+    URL:       https://www.metmuseum.org/about-the-met/policies-and-documents/open-access
+
+If you redistribute the corpus data, you must comply with each source's
+license terms. The CC BY-NC-SA restriction from RAMSES applies to any
+portion of the data derived from that source.
+
+================================================================================
+THIRD-PARTY SOFTWARE
+================================================================================
+
+  hermes-agent         MIT        NousResearch
+  ratatui              MIT        ratatui-org
+  crossterm            MIT        crossterm-rs
+  tokio                MIT        tokio-rs
+  reqwest              MIT/Apache Apache Software Foundation
+  hex2d-rs             MIT        Dawid Ciężarkiewicz (forked as hex2d-stacks)
+  FastAPI              MIT        Sebastián Ramírez
+  SQLAlchemy           MIT        SQLAlchemy authors
+  NetworkX             BSD        NetworkX developers
+  OpenAI Python SDK    Apache 2.0 OpenAI

@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 990" font-family="'JetBrains Mono','Fira Code','Cascadia Code','Consolas',monospace">
+  <defs>
+    <marker id="arr-cyan" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0.5 L9,3 L0,5.5" fill="none" stroke="#50dcc8" stroke-width="1"/>
+    </marker>
+    <radialGradient id="vig" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#0e0c09"/>
+      <stop offset="70%" stop-color="#0c0a08"/>
+      <stop offset="100%" stop-color="#050403"/>
+    </radialGradient>
+    <filter id="lg" x="-10%" y="-80%" width="120%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Hex geometry: flat-top, radius 52, height 90.
+         Center-to-center horizontal = 78 (1.5 * radius)
+         Center-to-center vertical = 90 (height)
+         Offset rows shift by half height = 45 -->
+
+    <!-- Reusable hex facet groups for each era -->
+    <!-- Surface (z=0): warm amber -->
+    <g id="hex-surface">
+      <polygon points="0,-45 45,-22.5 45,22.5 0,45 -45,22.5 -45,-22.5" fill="none" stroke="#2a2520" stroke-width="1.2"/>
+      <!-- Three cube facets -->
+      <polygon points="0,-45 45,-22.5 0,0 -45,-22.5" fill="#a09050" opacity="0.5"/>
+      <polygon points="-45,-22.5 0,0 0,45 -45,22.5" fill="#8c7346" opacity="0.5"/>
+      <polygon points="0,0 45,-22.5 45,22.5 0,45" fill="#786238" opacity="0.5"/>
+    </g>
+    <!-- Middle Kingdom (z=-3): honey papyrus -->
+    <g id="hex-middle">
+      <polygon points="0,-45 45,-22.5 45,22.5 0,45 -45,22.5 -45,-22.5" fill="none" stroke="#2a2520" stroke-width="1.2"/>
+      <polygon points="0,-45 45,-22.5 0,0 -45,-22.5" fill="#a88c50" opacity="0.5"/>
+      <polygon points="-45,-22.5 0,0 0,45 -45,22.5" fill="#967846" opacity="0.5"/>
+      <polygon points="0,0 45,-22.5 45,22.5 0,45" fill="#82683c" opacity="0.5"/>
+    </g>
+    <!-- New Kingdom (z=-5): lapis empire -->
+    <g id="hex-newkingdom">
+      <polygon points="0,-45 45,-22.5 45,22.5 0,45 -45,22.5 -45,-22.5" fill="none" stroke="#2a2520" stroke-width="1.2"/>
+      <polygon points="0,-45 45,-22.5 0,0 -45,-22.5" fill="#6050a0" opacity="0.5"/>
+      <polygon points="-45,-22.5 0,0 0,45 -45,22.5" fill="#554696" opacity="0.5"/>
+      <polygon points="0,0 45,-22.5 45,22.5 0,45" fill="#4a3c82" opacity="0.5"/>
+    </g>
+    <!-- Center hex (focus room) — brighter, full opacity -->
+    <g id="hex-focus">
+      <polygon points="0,-45 45,-22.5 45,22.5 0,45 -45,22.5 -45,-22.5" fill="none" stroke="#dcb428" stroke-width="1.8"/>
+      <polygon points="0,-45 45,-22.5 0,0 -45,-22.5" fill="#a09050" opacity="0.8"/>
+      <polygon points="-45,-22.5 0,0 0,45 -45,22.5" fill="#8c7346" opacity="0.8"/>
+      <polygon points="0,0 45,-22.5 45,22.5 0,45" fill="#786238" opacity="0.8"/>
+    </g>
+  </defs>
+
+  <rect width="1400" height="950" fill="url(#vig)"/>
+
+  <!-- Particles -->
+  <g opacity="0.11">
+    <circle cx="95" cy="300" r="1" fill="#dcb428"/><circle cx="1310" cy="450" r="0.7" fill="#f0c878"/>
+    <circle cx="180" cy="700" r="0.8" fill="#554696"/><circle cx="1250" cy="250" r="0.6" fill="#50dcc8"/>
+    <circle cx="50" cy="150" r="0.7" fill="#a08250"/><circle cx="1380" cy="800" r="0.8" fill="#377d73"/>
+  </g>
+
+  <!-- Era strip -->
+  <g>
+    <rect x="0" y="0" width="5" height="119" fill="#8c7346" opacity="0.7"/>
+    <rect x="0" y="119" width="5" height="119" fill="#a08250" opacity="0.7"/>
+    <rect x="0" y="238" width="5" height="119" fill="#645a4b" opacity="0.7"/>
+    <rect x="0" y="357" width="5" height="119" fill="#967846" opacity="0.7"/>
+    <rect x="0" y="476" width="5" height="119" fill="#5a5046" opacity="0.7"/>
+    <rect x="0" y="595" width="5" height="118" fill="#554696" opacity="0.7"/>
+    <rect x="0" y="713" width="5" height="119" fill="#4b7355" opacity="0.7"/>
+    <rect x="0" y="832" width="5" height="118" fill="#377d73" opacity="0.7"/>
+  </g>
+
+  <!-- ═══ TITLE ═══ -->
+  <text x="700" y="36" text-anchor="middle" font-size="20" fill="#f0ebe0" letter-spacing="5" font-weight="bold">BABEL FILE SYSTEM</text>
+  <text x="700" y="58" text-anchor="middle" font-size="12" fill="#8a7a58" letter-spacing="3">SPATIAL DATA TOPOLOGY</text>
+  <line x1="500" y1="66" x2="900" y2="66" stroke="#dcb428" stroke-width="0.4" opacity="0.3"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--              LAYER 1: SURFACE (z=0)                     -->
+  <!--              Center: (480, 200)                         -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <text x="180" y="110" font-size="14" fill="#a09050" letter-spacing="2" font-weight="bold">z = 0</text>
+  <text x="180" y="130" font-size="12" fill="#a08c60">Surface · Index</text>
+  <text x="180" y="148" font-size="11" fill="#8a7a58">Undated texts</text>
+
+  <g transform="translate(480,200)">
+    <!-- Ring of 6 neighbors -->
+    <use href="#hex-surface" x="0" y="-90"/>
+    <use href="#hex-surface" x="78" y="-45"/>
+    <use href="#hex-surface" x="78" y="45"/>
+    <use href="#hex-surface" x="0" y="90"/>
+    <use href="#hex-surface" x="-78" y="45"/>
+    <use href="#hex-surface" x="-78" y="-45"/>
+
+    <!-- Center: focus room -->
+    <use href="#hex-focus" x="0" y="0"/>
+
+    <!-- Door markers (2 of 6 edges) — gold -->
+    <!-- Door to NE neighbor -->
+    <line x1="22" y1="-34" x2="56" y2="-34" stroke="#dcb428" stroke-width="3" opacity="0.8"/>
+    <!-- Door to SW neighbor -->
+    <line x1="-56" y1="34" x2="-22" y2="34" stroke="#dcb428" stroke-width="3" opacity="0.8"/>
+
+    <!-- Wall markers (4 remaining edges) — dim -->
+    <line x1="22" y1="34" x2="56" y2="34" stroke="#2a2520" stroke-width="2" opacity="0.5"/>
+    <line x1="-56" y1="-34" x2="-22" y2="-34" stroke="#2a2520" stroke-width="2" opacity="0.5"/>
+    <line x1="45" y1="-10" x2="45" y2="10" stroke="#2a2520" stroke-width="2" opacity="0.5"/>
+    <line x1="-45" y1="-10" x2="-45" y2="10" stroke="#2a2520" stroke-width="2" opacity="0.5"/>
+
+    <!-- Room label -->
+    <text x="0" y="-6" text-anchor="middle" font-size="12" fill="#f0ebe0" font-weight="bold">jb-heart</text>
+    <text x="0" y="10" text-anchor="middle" font-size="11" fill="#dcb428">≡≡ ≡≡ ≡≡ ≡≡</text>
+    <text x="0" y="26" text-anchor="middle" font-size="11" fill="#8a7a58">4 shelves · 22 vol</text>
+
+    <!-- Neighbor room labels (NE = door, SW = door, others = wall) -->
+    <text x="78" y="-50" text-anchor="middle" font-size="11" fill="#dcb428">ns-tongue</text>
+    <text x="-78" y="54" text-anchor="middle" font-size="11" fill="#dcb428">ḥꜣty-chest</text>
+    <text x="78" y="54" text-anchor="middle" font-size="11" fill="#6b5c3a">jrt-eye</text>
+    <text x="0" y="-94" text-anchor="middle" font-size="11" fill="#6b5c3a">rn-name</text>
+  </g>
+
+  <!-- Codex notation -->
+  <text x="700" y="130" font-size="13" fill="#dcb428" letter-spacing="1" font-weight="bold">[5, -2, 0] : [NE, SW] : [0xAE60001]</text>
+  <text x="700" y="150" font-size="11" fill="#8a7a58">Deterministic Codex — coordinates : doors : seed</text>
+
+  <!-- Door/Wall legend for this layer -->
+  <text x="700" y="260" font-size="11" fill="#dcb428" opacity="0.7">── door (explicit link, walkable)</text>
+  <text x="700" y="278" font-size="11" fill="#6b5c3a">── wall (implicit link, semantic adjacency)</text>
+  <text x="700" y="296" font-size="11" fill="#8a7a58">6 neighbors · 2 doors max · 4 shared walls</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--     SHAFT CONNECTION: z=0 → z=-3                        -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <g filter="url(#lg)">
+    <line x1="480" y1="248" x2="538" y2="405" stroke="#50dcc8" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr-cyan)"/>
+  </g>
+  <text x="530" y="318" font-size="12" fill="#50dcc8" opacity="0.8">shaft ↕</text>
+  <text x="530" y="336" font-size="11" fill="#8a7a58">same (q,r)</text>
+  <text x="530" y="354" font-size="11" fill="#8a7a58">deeper era</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--         LAYER 2: MIDDLE KINGDOM (z=-3)                  -->
+  <!--         Center: (540, 500) — offset for isometric       -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <text x="200" y="420" font-size="14" fill="#a88c50" letter-spacing="2" font-weight="bold">z = -3</text>
+  <text x="200" y="440" font-size="12" fill="#a08c60">Middle Kingdom</text>
+  <text x="200" y="458" font-size="11" fill="#8a7a58">c. 2055–1650 BCE</text>
+  <text x="200" y="476" font-size="11" fill="#8a7a58">Sinuhe · Coffin Texts</text>
+
+  <g transform="translate(540,500)" opacity="0.7">
+    <use href="#hex-middle" x="0" y="-90"/>
+    <use href="#hex-middle" x="78" y="-45"/>
+    <use href="#hex-middle" x="78" y="45"/>
+    <use href="#hex-middle" x="0" y="90"/>
+    <use href="#hex-middle" x="-78" y="45"/>
+    <use href="#hex-middle" x="-78" y="-45"/>
+    <use href="#hex-middle" x="0" y="0"/>
+
+    <!-- Room label -->
+    <text x="0" y="-4" text-anchor="middle" font-size="11" fill="#f0ebe0">jb-heart</text>
+    <text x="0" y="12" text-anchor="middle" font-size="9" fill="#a08c60">same concept</text>
+    <text x="0" y="26" text-anchor="middle" font-size="9" fill="#8a7a58">older texts</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--     SHAFT CONNECTION: z=-3 → z=-5                       -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <g filter="url(#lg)">
+    <line x1="540" y1="548" x2="598" y2="695" stroke="#50dcc8" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr-cyan)"/>
+  </g>
+  <text x="590" y="618" font-size="12" fill="#50dcc8" opacity="0.8">shaft ↕</text>
+  <text x="590" y="636" font-size="11" fill="#8a7a58">B-tree descent</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--         LAYER 3: NEW KINGDOM (z=-5)                     -->
+  <!--         Center: (600, 790) — further offset             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <text x="220" y="710" font-size="14" fill="#6050a0" letter-spacing="2" font-weight="bold">z = -5</text>
+  <text x="220" y="730" font-size="12" fill="#a08c60">New Kingdom</text>
+  <text x="220" y="748" font-size="11" fill="#8a7a58">c. 1550–1069 BCE</text>
+  <text x="220" y="766" font-size="11" fill="#8a7a58">Book of the Dead</text>
+
+  <g transform="translate(600,790)" opacity="0.5">
+    <use href="#hex-newkingdom" x="0" y="-90"/>
+    <use href="#hex-newkingdom" x="78" y="-45"/>
+    <use href="#hex-newkingdom" x="78" y="45"/>
+    <use href="#hex-newkingdom" x="0" y="90"/>
+    <use href="#hex-newkingdom" x="-78" y="45"/>
+    <use href="#hex-newkingdom" x="-78" y="-45"/>
+    <use href="#hex-newkingdom" x="0" y="0"/>
+
+    <text x="0" y="-4" text-anchor="middle" font-size="11" fill="#f0ebe0">jb-heart</text>
+    <text x="0" y="12" text-anchor="middle" font-size="9" fill="#a08c60">same concept</text>
+    <text x="0" y="26" text-anchor="middle" font-size="9" fill="#8a7a58">deepest era</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--              RIGHT SIDE: ANNOTATIONS                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- ── SPATIAL MAPPING (primary — grounded in the hex diagram) ── -->
+  <text x="850" y="390" font-size="17" fill="#dcb428" letter-spacing="2" font-weight="bold">SPATIAL MAPPING</text>
+  <text x="850" y="410" font-size="11" fill="#8a7a58">Each concept maps to a BFS coordinate</text>
+
+  <!-- Table header line -->
+  <line x1="850" y1="420" x2="1340" y2="420" stroke="#dcb428" stroke-width="0.6" opacity="0.3"/>
+
+  <!-- Column headers -->
+  <text x="850" y="438" font-size="11" fill="#6b5c3a">CONCEPT</text>
+  <text x="990" y="438" font-size="11" fill="#6b5c3a">FORM</text>
+  <text x="1130" y="438" font-size="11" fill="#6b5c3a">EXAMPLE</text>
+
+  <line x1="850" y1="446" x2="1340" y2="446" stroke="#2a2520" stroke-width="0.5"/>
+
+  <!-- Row 1: Hexagon = Room -->
+  <text x="850" y="466" font-size="13" fill="#dcb428">Hexagon</text>
+  <text x="990" y="466" font-size="13" fill="#a08c60">Room</text>
+  <text x="1130" y="466" font-size="12" fill="#8a7a58">[5,-2,0] jb-heart</text>
+
+  <line x1="850" y1="476" x2="1340" y2="476" stroke="#1e1c18" stroke-width="0.4"/>
+
+  <!-- Row 2: Bookshelf = Wall unit -->
+  <text x="850" y="496" font-size="13" fill="#dcb428">Shelf</text>
+  <text x="990" y="496" font-size="13" fill="#a08c60">Wall unit</text>
+  <text x="1130" y="496" font-size="12" fill="#8a7a58">≡≡ shelf_0 (≤13 vol)</text>
+
+  <line x1="850" y1="506" x2="1340" y2="506" stroke="#1e1c18" stroke-width="0.4"/>
+
+  <!-- Row 3: Volume = Text -->
+  <text x="850" y="526" font-size="13" fill="#dcb428">Volume</text>
+  <text x="990" y="526" font-size="13" fill="#a08c60">Text</text>
+  <text x="1130" y="526" font-size="12" fill="#8a7a58">aeg_oraec_38</text>
+
+  <line x1="850" y1="536" x2="1340" y2="536" stroke="#1e1c18" stroke-width="0.4"/>
+
+  <!-- Row 4: Page = Sentence -->
+  <text x="850" y="556" font-size="13" fill="#dcb428">Page</text>
+  <text x="990" y="556" font-size="13" fill="#a08c60">Sentence</text>
+  <text x="1130" y="556" font-size="12" fill="#8a7a58">wn.jn ḥr sḏm=f</text>
+
+  <line x1="850" y1="566" x2="1340" y2="566" stroke="#1e1c18" stroke-width="0.4"/>
+
+  <!-- Row 5: Door = Explicit link -->
+  <text x="850" y="586" font-size="13" fill="#dcb428">Door</text>
+  <text x="990" y="586" font-size="13" fill="#a08c60">Explicit link</text>
+  <text x="1130" y="586" font-size="12" fill="#8a7a58">NE → ns-tongue</text>
+
+  <line x1="850" y1="596" x2="1340" y2="596" stroke="#1e1c18" stroke-width="0.4"/>
+
+  <!-- Row 6: Shaft = Z traversal -->
+  <text x="850" y="616" font-size="13" fill="#50dcc8">Shaft</text>
+  <text x="990" y="616" font-size="13" fill="#a08c60">Z traversal</text>
+  <text x="1130" y="616" font-size="12" fill="#8a7a58">[5,-2,0] ↕ [5,-2,-3]</text>
+
+  <!-- Table bottom line -->
+  <line x1="850" y1="626" x2="1340" y2="626" stroke="#dcb428" stroke-width="0.6" opacity="0.3"/>
+
+  <!-- ── TOPOLOGY (secondary — stats) ── -->
+  <text x="850" y="660" font-size="13" fill="#a08c60" letter-spacing="2" font-weight="bold">TOPOLOGY</text>
+
+  <text x="850" y="684" font-size="12" fill="#a08c60">2,000+ rooms · 8 z-levels · 8 districts</text>
+  <text x="850" y="704" font-size="12" fill="#8a7a58">77,683 texts → deterministic topology</text>
+  <text x="850" y="724" font-size="11" fill="#6b5c3a">Same corpus → same library (always)</text>
+
+  <!-- ── DISTRICTS (tertiary — reference) ── -->
+  <text x="850" y="760" font-size="13" fill="#a08c60" letter-spacing="2" font-weight="bold">DISTRICTS</text>
+  <text x="985" y="760" font-size="11" fill="#6b5c3a">Q/R horizontal plane</text>
+
+  <text x="850" y="784" font-size="12" fill="#a08c60">Temple · Necropolis · House of Life</text>
+  <text x="850" y="804" font-size="12" fill="#a08c60">Admin · School · Quarry · Royal · Domestic</text>
+  <text x="850" y="824" font-size="11" fill="#6b5c3a">Assigned from text metadata, not editorial curation</text>
+
+  <!-- ── Z-AXIS (tertiary — reference) ── -->
+  <text x="850" y="860" font-size="13" fill="#a08c60" letter-spacing="2" font-weight="bold">Z-AXIS</text>
+  <text x="940" y="860" font-size="11" fill="#6b5c3a">chronological depth</text>
+
+  <text x="850" y="884" font-size="11" fill="#a09050">z≥0  Surface / Index</text>
+  <text x="850" y="902" font-size="11" fill="#a08250">z=-1 Old Kingdom (c.2686 BCE)</text>
+  <text x="850" y="920" font-size="11" fill="#a88c50">z=-3 Middle Kingdom (c.2055 BCE)</text>
+  <text x="850" y="938" font-size="11" fill="#6050a0">z=-5 New Kingdom (c.1550 BCE)</text>
+  <text x="850" y="956" font-size="11" fill="#377d73">z=-7 Greco-Roman (to 395 CE)</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--                     FOOTER                              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <line x1="60" y1="970" x2="1340" y2="970" stroke="#1e1c18" stroke-width="0.4" opacity="0.3"/>
+  <text x="700" y="985" text-anchor="middle" font-size="11" fill="#4a4030" letter-spacing="1">The same (q,r) across z-levels = the same concept across millennia · The vertical alignment is earned by the data</text>
+</svg>

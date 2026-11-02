@@ -1,0 +1,242 @@
+[
+  {
+    "canonical_id": "aeg_oraec_502",
+    "name": "Pyramid Texts — Utterance 539",
+    "district": "necropolis",
+    "z_band": -7,
+    "description": "The oldest religious texts in human history, inscribed on the walls of Old Kingdom pyramids. Utterance 539 from the pyramid of Pepi I addresses the king's transfiguration and ascent among the imperishable stars.",
+    "sentence_count": 160,
+    "has_translation": true,
+    "search_method": "metadata::text ILIKE '%pyramid text%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_578",
+    "name": "Coffin Texts — Spell 151",
+    "district": "necropolis",
+    "z_band": -4,
+    "description": "Middle Kingdom funerary spells inscribed on coffin interiors, democratizing royal afterlife texts. CT 151 addresses the deceased's protection and provisioning in the netherworld.",
+    "sentence_count": 30,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%CT %'"
+  },
+  {
+    "canonical_id": "aeg_oraec_76",
+    "name": "Book of the Dead — Spell 125 (Papyrus of Nu)",
+    "district": "necropolis",
+    "z_band": -6,
+    "description": "The judgment of the dead before Osiris — the Negative Confession and weighing of the heart. The most iconic scene in Egyptian funerary literature, from the 18th Dynasty Papyrus of Nu.",
+    "sentence_count": 478,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Tb %'"
+  },
+  {
+    "canonical_id": "aeg_oraec_17",
+    "name": "Story of Sinuhe",
+    "district": "house_of_life",
+    "z_band": -1,
+    "description": "The masterpiece of Middle Egyptian literature. A court official flees Egypt after the assassination of Amenemhat I, lives among Asiatics, and returns in old age. Papyrus Berlin P 3022 (manuscript B), the most complete version.",
+    "sentence_count": 710,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Sinuhe%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_32",
+    "name": "Ebers Papyrus — Compendium on Stomach Ailments",
+    "district": "house_of_life",
+    "z_band": -1,
+    "description": "The longest and most complete medical papyrus from ancient Egypt, dating to the reign of Amenhotep I. This section (Eb 4-103) is the largest single division, covering diagnosis and treatment of abdominal complaints.",
+    "sentence_count": 920,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Ebers%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_13",
+    "name": "Edwin Smith Surgical Papyrus — Head Injuries",
+    "district": "house_of_life",
+    "z_band": -1,
+    "description": "The oldest known surgical treatise, organized as a systematic case-by-case manual proceeding from head to chest. Cases 1-27 cover cranial and cervical trauma with rational diagnosis, prognosis, and treatment.",
+    "sentence_count": 686,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Edwin Smith%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_36",
+    "name": "Instruction of Ptahhotep",
+    "district": "school",
+    "z_band": -1,
+    "description": "The oldest complete wisdom text, attributed to a vizier of the 5th Dynasty. Thirty-seven maxims on ethical conduct, speech, and social hierarchy. The Prisse Papyrus version (P), the most authoritative manuscript.",
+    "sentence_count": 826,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Ptahhotep%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_430",
+    "name": "Great Hymn to the Nile (Nilhymnus)",
+    "district": "temple",
+    "z_band": -3,
+    "description": "A hymn celebrating the annual Nile inundation as the source of Egypt's life and prosperity. The Chester Beatty V version (pBM EA 10685), a complete New Kingdom manuscript of the most widely copied Egyptian hymn.",
+    "sentence_count": 162,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Nilhymn%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_1662",
+    "name": "Great Hymn to the Aten",
+    "district": "temple",
+    "z_band": -3,
+    "description": "The revolutionary solar monotheistic hymn from the Amarna period, inscribed on tomb doorways at Akhetaten. Celebrates the Aten as sole creator and sustainer of all life. Second hymn, east wall inscription.",
+    "sentence_count": 34,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Hymnus an Aton%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_115",
+    "name": "Shipwrecked Sailor",
+    "district": "house_of_life",
+    "z_band": 0,
+    "description": "A Middle Kingdom tale of a sailor cast upon a magical island ruled by a divine serpent. A frame narrative exploring duty, fate, and the limits of storytelling. Papyrus Petersburg 1115.",
+    "sentence_count": 330,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Schiffbrüch%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_30",
+    "name": "Westcar Papyrus (Tales of Wonder)",
+    "district": "house_of_life",
+    "z_band": -5,
+    "description": "A cycle of magical tales told at the court of Khufu, culminating in the prophecy of the birth of the first three kings of the 5th Dynasty. Myth, magic, and royal legitimation interwoven. Papyrus Berlin P 3033.",
+    "sentence_count": 810,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Westcar%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_19",
+    "name": "Eloquent Peasant",
+    "district": "admin",
+    "z_band": -1,
+    "description": "A Middle Kingdom narrative of a peasant who delivers nine rhetorical petitions for justice after being robbed. A meditation on maat, bureaucratic power, and the eloquence of the dispossessed. Papyrus Berlin P 3023 (B1).",
+    "sentence_count": 826,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Bauer%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_21",
+    "name": "Admonitions of Ipuwer",
+    "district": "admin",
+    "z_band": -2,
+    "description": "A lament over the collapse of social order — the world inverted, servants become masters, the Nile runs with blood. Whether historical report or literary topos, it is the Egyptian voice of civilizational crisis. Papyrus Leiden I 344.",
+    "sentence_count": 1044,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Ipuwer%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_226",
+    "name": "Cannibal Hymn (PT 273 + PT 274)",
+    "district": "necropolis",
+    "z_band": -7,
+    "description": "The king as cosmic predator who devours the gods to absorb their power. The most violent and archaic passage in the Pyramid Texts, reflecting pre-state religious conceptions of royal divinity. East wall of the pyramid of Unas.",
+    "sentence_count": 128,
+    "has_translation": true,
+    "search_method": "metadata::text ILIKE '%pyramid text%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_15",
+    "name": "Teaching of Amenemope",
+    "district": "school",
+    "z_band": -1,
+    "description": "A New Kingdom wisdom text with striking parallels to the biblical Book of Proverbs. Thirty chapters of instruction on humility, honesty, and the 'silent man' ideal. Papyrus BM EA 10474, the complete manuscript.",
+    "sentence_count": 732,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Amenemope%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_98",
+    "name": "Satire of the Trades (Lehre des Cheti)",
+    "district": "school",
+    "z_band": 0,
+    "description": "A father's instruction to his son on the miseries of every profession except the scribe's. The most copied school text in ancient Egypt — a literary argument for literacy itself. Papyrus Sallier II (pBM EA 10182).",
+    "sentence_count": 338,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Cheti%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_51",
+    "name": "Tale of Two Brothers",
+    "district": "house_of_life",
+    "z_band": -5,
+    "description": "A mythological tale of two divine brothers — Anubis and Bata — involving betrayal, transformation, death and rebirth. Folklore interwoven with theology. Papyrus d'Orbiney (pBM EA 10183).",
+    "sentence_count": 704,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Zweibrüder%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_9",
+    "name": "Papyrus Anastasi I (Satirical Letter of Hori)",
+    "district": "school",
+    "z_band": 0,
+    "description": "An elaborate satirical letter mocking an incompetent scribe's geographical and military ignorance. A tour de force of literary invective and the most complete Ramesside miscellany text. Papyrus BM EA 10247.",
+    "sentence_count": 1134,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Anastasi%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_40",
+    "name": "Contendings of Horus and Seth",
+    "district": "house_of_life",
+    "z_band": -5,
+    "description": "The mythological tribunal over the inheritance of Osiris — Horus and Seth compete for kingship through contests, trickery, and divine arbitration. The longest connected narrative about the gods. Papyrus Chester Beatty I.",
+    "sentence_count": 1010,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Horus und Seth%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_319",
+    "name": "Papyrus Prisse — Teaching for Kagemni",
+    "district": "house_of_life",
+    "z_band": -1,
+    "description": "The earliest surviving literary manuscript, containing the conclusion of the Teaching for Kagemni — a wisdom text on table manners, modesty, and restraint. The Prisse Papyrus (pBN 183) also carries the Ptahhotep text.",
+    "sentence_count": 92,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Prisse%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_75",
+    "name": "Dialogue of a Man with his Ba",
+    "district": "house_of_life",
+    "z_band": -5,
+    "description": "A philosophical dialogue between a man weary of life and his ba (soul) about the meaning of death and existence. The most existentially complex text in Egyptian literature. Papyrus Berlin P 3024.",
+    "sentence_count": 318,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Lebensmüde%'"
+  },
+  {
+    "canonical_id": "aeg_oraec_146",
+    "name": "Hymn to Osiris",
+    "district": "temple",
+    "z_band": -3,
+    "description": "A Late Period hymn recounting the mythology of Osiris — his kingship, murder by Seth, restoration by Isis, and vindication through Horus. The fullest Egyptian narrative of the Osiris cycle. Papyrus of Nes-ba-neb-djed II.",
+    "sentence_count": 160,
+    "has_translation": true,
+    "search_method": "conventional_name ILIKE '%Osirishymn%'"
+  },
+  {
+    "canonical_id": "aeg_aedtei_GK46UT5QMNHPLFBNXDRXYRE2Z4",
+    "name": "Amduat (What is in the Duat) — 7th Hour",
+    "district": "necropolis",
+    "z_band": -6,
+    "description": "The earliest complete composition describing the sun god's nocturnal journey through the twelve hours of the underworld. The 7th hour — the moment of greatest danger where Apophis is defeated. Found but no sentence content in corpus.",
+    "sentence_count": 0,
+    "has_translation": false,
+    "search_method": "conventional_name ILIKE '%Amduat%'"
+  },
+  {
+    "canonical_id": "aeg_aedtei_A3YGVWFAAZEZHPIXRZLCMPSLRU",
+    "name": "Opening of the Mouth Ritual",
+    "district": "temple",
+    "z_band": -3,
+    "description": "The ritual that animated statues and the dead, enabling them to breathe, eat, and speak. The foundational ritual act of Egyptian religion — transforming matter into vessel. Found but no sentence content in corpus.",
+    "sentence_count": 0,
+    "has_translation": false,
+    "search_method": "conventional_name ILIKE '%Mundöffn%'"
+  }
+]
