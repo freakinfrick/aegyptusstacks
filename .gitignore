@@ -52,3 +52,4 @@ articles/
 # Web build data (built by tools/export_web_db.py; never committed)
 /web/stacks.sqlite*
 /web/stacks.tmp
+/web/data/

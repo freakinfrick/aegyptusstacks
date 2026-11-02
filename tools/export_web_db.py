@@ -8,6 +8,7 @@ browser sees exactly what `get_room` would return. Text comes from Postgres.
     python3 tools/export_web_db.py build  --out web/stacks.sqlite
     python3 tools/export_web_db.py licenses --db web/stacks.sqlite > DATA-LICENSES.md
     python3 tools/export_web_db.py check  --db web/stacks.sqlite --licenses DATA-LICENSES.md
+    python3 tools/export_web_db.py chunks --db web/stacks.sqlite --out web/data
 
 Licence rules (see DATA-LICENSES.md, generated from the file itself):
   - Nederhof PhilologEg is left out (redistribution needs the author's permission).
@@ -29,7 +30,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DSN = os.environ.get("DATABASE_URL", "postgresql://aegyptus:dev@localhost:5434/aegyptus")
-PAGE_SIZE = int(os.environ.get("EXPORT_PAGE_SIZE", "4096"))
+PAGE_SIZE = int(os.environ.get("EXPORT_PAGE_SIZE", "16384"))  # fewer round trips beats fewer bytes on a phone
 
 # Source key -> (display name, licence, non-commercial, url). Licences as recorded
 # in the aegyptusdb README source list.
@@ -194,7 +195,7 @@ def build(out: Path) -> None:
     db.executemany("insert into meta values (?,?)", meta.items())
     db.executescript("""
     CREATE VIRTUAL TABLE fts USING fts5(translit, en, de, content='sentences', content_rowid='id',
-      tokenize='unicode61 remove_diacritics 2');
+      tokenize='porter unicode61 remove_diacritics 2');
     INSERT INTO fts(fts) VALUES('rebuild');
     INSERT INTO fts(fts) VALUES('optimize');
     """)
@@ -281,6 +282,30 @@ def check(db_path: Path, licenses: Path) -> int:
     return 1 if problems else 0
 
 
+def chunks(db_path: Path, out: Path, chunk_mb: int) -> None:
+    """Split the file into fixed-size pieces for static hosting (Pages caps files at 25 MiB)
+    and write the sql.js-httpvfs 'chunked' config. A content hash in the prefix busts caches."""
+    import hashlib
+
+    data = db_path.read_bytes()
+    digest = hashlib.sha256(data).hexdigest()[:12]
+    size = chunk_mb * 1024 * 1024
+    out.mkdir(parents=True, exist_ok=True)
+    for old in out.glob("db-*.bin"):
+        old.unlink()
+    prefix, n = f"db-{digest}-", 0
+    for n, start in enumerate(range(0, len(data), size)):
+        (out / f"{prefix}{n:03d}.bin").write_bytes(data[start:start + size])
+    page = sqlite3.connect(db_path).execute("pragma page_size").fetchone()[0]
+    config = {"serverMode": "chunked", "requestChunkSize": page, "databaseLengthBytes": len(data),
+              "serverChunkSize": size, "urlPrefix": prefix, "suffixLength": 3,
+              "urlSuffix": ".bin"}  # urlSuffix: local patch in the site's vendored worker
+    (out / "config.json").write_text(json.dumps(config, indent=1) + "\n")
+    # The licence page travels with the data it describes (the site renders this copy).
+    (out / "DATA-LICENSES.md").write_text(licenses_md(db_path))
+    log(f"{n + 1} chunks of {chunk_mb} MiB in {out}, prefix {prefix}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -291,9 +316,15 @@ def main() -> int:
     c = sub.add_parser("check")
     c.add_argument("--db", type=Path, default=ROOT / "web" / "stacks.sqlite")
     c.add_argument("--licenses", type=Path, default=ROOT / "DATA-LICENSES.md")
+    ch = sub.add_parser("chunks")
+    ch.add_argument("--db", type=Path, default=ROOT / "web" / "stacks.sqlite")
+    ch.add_argument("--out", type=Path, default=ROOT / "web" / "data")
+    ch.add_argument("--chunk-mb", type=int, default=10)
     a = ap.parse_args()
     if a.cmd == "build":
         build(a.out)
+    elif a.cmd == "chunks":
+        chunks(a.db, a.out, a.chunk_mb)
     elif a.cmd == "licenses":
         sys.stdout.write(licenses_md(a.db))
     else:
