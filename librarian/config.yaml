@@ -5,7 +5,7 @@ model:
   # eval picked. The system prompt plus skill schemas run ~14k tokens on their own,
   # so context_length must leave room for the conversation on top; 8k truncates
   # the prompt before the first turn.
-  name: gemma4-31b-dense
+  name: gemma4-31b-dense   # our model-swap profile name; use whatever your server calls it
   api_base: http://localhost:8080/v1
   context_length: 65536
 
