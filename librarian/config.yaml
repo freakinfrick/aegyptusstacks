@@ -1,9 +1,13 @@
 model:
   # Any OpenAI-compatible endpoint — ollama, llama-server, vllm, etc.
   # Override with LLM_API_BASE and LLM_MODEL environment variables.
-  name: hermes3:8b
-  api_base: http://localhost:11434/v1
-  context_length: 8192
+  # Reference setup: Gemma 4 31B (dense) on llama-server, the model the Librarian
+  # eval picked. The system prompt plus skill schemas run ~14k tokens on their own,
+  # so context_length must leave room for the conversation on top; 8k truncates
+  # the prompt before the first turn.
+  name: gemma4-31b-dense
+  api_base: http://localhost:8080/v1
+  context_length: 65536
 
 system_prompt: system_prompt.md
 
