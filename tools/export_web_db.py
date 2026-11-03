@@ -55,6 +55,7 @@ SOURCES = {
 }
 EXCLUDED = {
     "nederhof_philologeg": "redistribution needs the author's permission",
+    "isac_internal": "ISAC/OI translations, all rights reserved: internal use only",
     "aes": "unordered near-duplicate of ORAEC rows (97,975 of 101,796 identical)",
     "ad_hoc": "test fixture",
     "test": "test fixture",
